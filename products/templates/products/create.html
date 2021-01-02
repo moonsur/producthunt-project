@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="mt-4">Create</h1>
+
+{% if error %}
+<div class="error">
+    {{error}}
+</div>
+{% endif %}
+
+
+<form class="mt-4" action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="title mt-3">
+        <label for="title">Title:</label> <br>
+        <input type="text" name="title" id="title">
+    </div>
+
+    <div class="body mt-3">
+        <label for="body">Body:</label> <br>
+        <textarea name="body" id="body" cols="60" rows="10"></textarea>
+    </div>
+
+    <div class="url mt-3">
+        <label for="url">Url:</label> <br>
+        <input type="textarea" name="url" id="url">
+    </div>
+
+    <div class="icon mt-3">
+        <label for="icon">Icon:</label> <br>
+        <input type="file" name="icon" id="icon">
+    </div>
+
+    <div class="image mt-3">
+        <label for="image">Image:</label> <br>
+        <input type="file" name="image" id="image">
+    </div>
+
+    <div class="mt-4">
+        <input class="btn btn-primary" type="submit" value="Add Product">
+    </div>
+</form>
+
+{% endblock %}

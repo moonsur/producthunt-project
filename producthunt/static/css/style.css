@@ -1,0 +1,60 @@
+body{
+    background-color: lightgreen;
+}
+
+.product-icon{
+    width: 20vw;
+    height: auto;
+}
+
+.product-img{
+    width: 60vw;
+    height: auto;
+}
+
+.product-icon img, .product-img img{
+    width: 100%;
+    height: auto;
+}
+
+.content{
+    min-height: 75vh;
+}
+
+.upvote{
+    vertical-align: middle;
+}
+
+.title{
+    position: relative;
+}
+
+.title_link{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    transition: all .2s;
+}
+
+.title_link:hover{
+    color: #eeeeee;
+}
+
+.pub-date{
+    text-align: right;
+}
+
+.description{
+    text-align: justify;
+}
+
+.btn-block{
+    display: block;
+}
+
+.cur-poin{
+    cursor: pointer;
+}

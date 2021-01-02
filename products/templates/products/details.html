@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<div class="product_details">
+    <div class="row mt-5">
+        <div class="col-2">
+            <img class="img-fluid" src="{{product.icon.url}}" alt="Product Icon">
+        </div>
+        <div class="title col-10">
+            <a class="title_link" href="{{ product.url }}">
+                <h1>{{product.title}}</h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-8">
+            <img class="img-fluid" src="{{product.image.url}}" alt="Product image">
+        </div>
+        <div class="col-4">
+            <a href="javascript:{document.getElementById('upvote').submit()}">
+                <button class="btn btn-primary btn-lg btn-block">
+                    <ion-icon class="upvote" name="caret-up-sharp"></ion-icon> Upvote {{product.votes_total}}
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-8">
+            <h4>{{ product.hunter.first_name }} {{ product.hunter.last_name }}</h4>
+        </div>
+        <div class="col-4">
+            <h4 class="pub-date">{{ product.pub_date }}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <p class="description">
+            {{ product.body }}
+        </p>
+    </div>
+
+</div>
+
+<form id="upvote" action="{% url 'upvote' product.id %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="hidden">
+</form>
+
+{% endblock %}

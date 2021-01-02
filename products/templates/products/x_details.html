@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<h1>Products Details</h1>
+
+<div class="product_details">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th class="row">Title</th>
+                <td class="row">{{product.title}}</td>
+                <th class="row">Publication Date</th>
+                <td class="row">{{product.pub_date}}</td>
+                <th class="row">Icon</th>
+                <td class="row">
+                    <div class="product-icon">
+                        <img src="{{product.icon.url}}" alt="Product Icon">
+                    </div>
+                </td>
+                <th class="row">Image</th>
+                <td class="row">
+                    <div class="product-img">
+                        <img src="{{product.image.url}}" alt="Product Image">
+                    </div>
+                </td>
+                <th class="row">Total Votes</th>
+                <td class="row">{{product.votes_total}}</td>
+                <th class="row">Body</th>
+                <td class="row">{{product.body}}</td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+{% endblock %}
